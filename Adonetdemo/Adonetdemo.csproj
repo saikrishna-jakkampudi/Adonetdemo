@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{851884BE-B757-4E4F-AC72-23B1795E7C5A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Adonetdemo</RootNamespace>
+    <AssemblyName>Adonetdemo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.1.3\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.html2pdf, Version=2.1.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.pdfhtml.2.1.6\lib\net40\itext.html2pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=7.1.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.9\lib\net40\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.8.46, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.PDF.6.1.8\lib\net46\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=6.1.8.2046, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.PDF.6.1.8\lib\net46\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bigtrigger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bigtrigger.Designer.cs">
+      <DependentUpon>Bigtrigger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckEmp.Designer.cs">
+      <DependentUpon>CheckEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommandBuilder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommandBuilder.Designer.cs">
+      <DependentUpon>CommandBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connectionless.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Connectionless.Designer.cs">
+      <DependentUpon>Connectionless.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cursor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cursor.Designer.cs">
+      <DependentUpon>Cursor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CursorEx2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CursorEx2.Designer.cs">
+      <DependentUpon>CursorEx2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exampleform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exampleform.Designer.cs">
+      <DependentUpon>Exampleform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExampleForm2.Designer.cs">
+      <DependentUpon>ExampleForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Extract.Designer.cs">
+      <DependentUpon>Extract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extractsp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Extractsp.Designer.cs">
+      <DependentUpon>Extractsp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FunctionSql.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FunctionSql.Designer.cs">
+      <DependentUpon>FunctionSql.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Insert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Insert.Designer.cs">
+      <DependentUpon>Insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Insertnew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Insertnew.Designer.cs">
+      <DependentUpon>Insertnew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Killer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Killer.Designer.cs">
+      <DependentUpon>Killer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PDF.Designer.cs">
+      <DependentUpon>PDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductDetails.Designer.cs">
+      <DependentUpon>ProductDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Radio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Radio.Designer.cs">
+      <DependentUpon>Radio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="trgExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="trgExample.Designer.cs">
+      <DependentUpon>trgExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update.Designer.cs">
+      <DependentUpon>Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Updateprcoedure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Updateprcoedure.Designer.cs">
+      <DependentUpon>Updateprcoedure.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Bigtrigger.resx">
+      <DependentUpon>Bigtrigger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckEmp.resx">
+      <DependentUpon>CheckEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommandBuilder.resx">
+      <DependentUpon>CommandBuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Connectionless.resx">
+      <DependentUpon>Connectionless.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cursor.resx">
+      <DependentUpon>Cursor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CursorEx2.resx">
+      <DependentUpon>CursorEx2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exampleform.resx">
+      <DependentUpon>Exampleform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExampleForm2.resx">
+      <DependentUpon>ExampleForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extract.resx">
+      <DependentUpon>Extract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extractsp.resx">
+      <DependentUpon>Extractsp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FunctionSql.resx">
+      <DependentUpon>FunctionSql.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Insert.resx">
+      <DependentUpon>Insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Insertnew.resx">
+      <DependentUpon>Insertnew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Killer.resx">
+      <DependentUpon>Killer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDF.resx">
+      <DependentUpon>PDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductDetails.resx">
+      <DependentUpon>ProductDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Radio.resx">
+      <DependentUpon>Radio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="trgExample.resx">
+      <DependentUpon>trgExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update.resx">
+      <DependentUpon>Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Updateprcoedure.resx">
+      <DependentUpon>Updateprcoedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
